@@ -17,10 +17,13 @@
               Dropdown
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="{{route('login')}}">Ciao, accedi</a></li>
+              <li><a class="dropdown-item" href="{{route('register')}}">Registrati</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Esci</a></li>
+              <form action="{{route('logout')}}" method="POST" id="form-logout" class="d-none">
+                @csrf
+              </form>
             </ul>
           </li>
           <li class="nav-item">
