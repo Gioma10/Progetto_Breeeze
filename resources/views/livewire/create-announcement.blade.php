@@ -19,6 +19,14 @@
                     <input wire:model='price' type="text" class="form-control" id="InputPrice">
                     </div>
 
+                    <select class="form-control" for="category" wire:model.defer="category" multiple id="selectCategory">
+                        @foreach ($categories as $category)
+                            <option value="{{$category->id}}">
+                                {{$category->name}}
+                            </option>
+                        @endforeach
+                    </select>
+
                     <button type="submit" class="btn btn-primary">Inserisci Annuncio</button>
                 </form>
             </div>
