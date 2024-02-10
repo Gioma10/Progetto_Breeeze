@@ -2,8 +2,12 @@
     <div class="container">
         <div class="row">
             <div class="col-10">
+                @if (session()->has('message'))
+                    <div class="flex flex-row justify-center my-2 alert alert-success">
+                        {{session('message')}}
+                    </div>
+                @endif
                 <form wire:submit="store">
-
                     <div class="mb-3">
                     <label for="InputTitle" class="form-label">Titolo</label>
                     <input wire:model='title' type="text" class="form-control" id="InputTitle" aria-describedby="titleHelp">
@@ -19,7 +23,7 @@
                     <input wire:model='price' type="text" class="form-control" id="InputPrice">
                     </div>
 
-                    <select class="form-control" for="category" wire:model.defer="category" multiple id="selectCategory">
+                    <select class="form-control" for="category" wire:model.defer="category" id="category">
                         @foreach ($categories as $category)
                             <option value="{{$category->id}}">
                                 {{$category->name}}
