@@ -10,7 +10,11 @@
                 <form wire:submit="store">
                     <div class="mb-3">
                     <label for="InputTitle" class="form-label">Titolo</label>
-                    <input wire:model='title' type="text" class="form-control" id="InputTitle" aria-describedby="titleHelp">
+                    <input wire:model='title' type="text" class="form-control @error('title') is-invalid @enderror">
+                    @error('title')
+                    {{$messages}}
+                    @enderror
+
                     </div>
 
                     <div class="mb-3">
