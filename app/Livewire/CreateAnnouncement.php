@@ -2,9 +2,9 @@
 
 namespace App\Livewire;
 
-use Livewire\Component;
 use App\Models\Category;
 use App\Models\Announcement;
+use Illuminate\View\Component;
 use Illuminate\Support\Facades\Auth;
 
 class CreateAnnouncement extends Component
