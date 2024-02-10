@@ -11,11 +11,6 @@
                     <div class="mb-3">
                         <label for="InputTitle" class="form-label">Titolo</label>
                         <input wire:model.lazy='title' type="text" class="form-control @error('title') is-invalid @enderror">
-                    @error('title')
-                        <div class="text-danger">
-                            {{$message}}
-                        </div>
-                    @enderror
                     </div>
 
                     <div class="mb-3">

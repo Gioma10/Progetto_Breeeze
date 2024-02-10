@@ -1,4 +1,7 @@
 <x-layout>
+
+    @section('title', 'Accedi')
+
     <form action="{{route('login')}}" method="POST">
         @csrf
         <div class="mb-3">

@@ -3,6 +3,10 @@
 namespace App\Providers;
 
 use App\Models\Category;
+use Laravel\Fortify\Fortify;
+use Illuminate\Http\Client\Request;
+use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
