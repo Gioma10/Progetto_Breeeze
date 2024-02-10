@@ -24,5 +24,4 @@
             @endforeach   
         </div>
     </section>
-
 </x-layout>

@@ -9,24 +9,33 @@
                 @endif
                 <form wire:submit="store">
                     <div class="mb-3">
-                    <label for="InputTitle" class="form-label">Titolo</label>
-                    <input wire:model='title' type="text" class="form-control @error('title') is-invalid @enderror">
+                        <label for="InputTitle" class="form-label">Titolo</label>
+                        <input wire:model.lazy='title' type="text" class="form-control @error('title') is-invalid @enderror">
                     @error('title')
-                    {{$messages}}
+                        <div class="text-danger">
+                            {{$message}}
+                        </div>
                     @enderror
-
                     </div>
 
                     <div class="mb-3">
-                    <label for="InputDescription" class="form-label">Descrizione</label>
-                    <textarea wire:model='description' id="InputDescription" cols="30" rows="10"></textarea>
+                        <label for="InputDescription" class="form-label">Descrizione</label>
+                        <textarea wire:model.lazy='description' id="InputDescription" cols="30" rows="10" class="@error('title') is-invalid @enderror"></textarea>
+                    @error('description')
+                        <div class="text-danger">
+                            {{$message}}
+                        </div>
+                    @enderror
                     </div>
-
                     <div class="mb-3">
-                    <label for="InputPrice" class="form-label">Prezzo</label>
-                    <input wire:model='price' type="text" class="form-control" id="InputPrice">
+                        <label for="InputPrice" class="form-label">Prezzo</label>
+                        <input wire:model.lazy='price' type="text" class="form-control @error('title') is-invalid @enderror" id="InputPrice">
+                    @error('price')
+                        <div class="text-danger">
+                            {{$message}}
+                        </div>
+                    @enderror
                     </div>
-
                     <select class="form-control" for="category" wire:model.defer="category" id="category">
                         @foreach ($categories as $category)
                             <option value="{{$category->id}}">
