@@ -14,9 +14,6 @@ class PublicController extends Controller
         
         $titleView = "Home Page";
         return view('welcome', compact('titleView', 'announcements'));
-
-        
-        
     }
 
 }
