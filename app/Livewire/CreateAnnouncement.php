@@ -21,10 +21,10 @@ class CreateAnnouncement extends Component
             'description'=>$this->description,
             'price'=>$this->price,
         ]);
-        Auth::user()->announcements()->save($announcement);
+        // Auth::user()->announcements()->save($announcement);
 
-        session()->flash('message', 'Annuncio inserito correttamente');
-        $this->reset();
+        // session()->flash('message', 'Annuncio inserito correttamente');
+        // $this->reset();
     }
 
     public function render()
