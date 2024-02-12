@@ -44,7 +44,8 @@ class PublicController extends Controller
         // }
 
         // $announcements = Announcement::all();
-        return view('announcements.index', compact('announcements', 'selectedCategoryName'));
+        
+        return view('announcements.index', compact('announcements'));
     }
 
 }
