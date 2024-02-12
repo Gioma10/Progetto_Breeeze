@@ -15,6 +15,15 @@ class PublicController extends Controller
 
         $titleView = "Home Page";
         return view('welcome', compact('titleView', 'announcements'));
-    }
 
+    }
+    public function showAnnouncement(Announcement $announcement){
+        return view('show', compact('announcement'));
+    }
+    
+    public function indexAnnouncement(){
+        
+        $announcements = Announcement::all();
+        return view('index', compact('announcements'));
+    }
 }

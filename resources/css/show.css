@@ -1,0 +1,15 @@
+.slide-show-img{
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.slide-show-img img:hover {
+    background-color: red;
+}
+
+@media screen and(max-width:768px) { 
+    
+ .slide-show-img::-webkit-scrollbar {
+  display: none;
+
+}}
