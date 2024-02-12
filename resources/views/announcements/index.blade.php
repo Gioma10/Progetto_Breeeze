@@ -2,17 +2,23 @@
   <section class="container my-5 vh20">
     <div class="row h-100 align-items-center justify-content-center">
         <div class="col-12 d-flex justify-content-center">
-            <form action="" class="d-flex w-75 myborder py-4 justify-content-center">
+            <form action="{{route('announcements_index')}}" method="GET" class="d-flex w-75 myborder py-4 justify-content-center">
                 <div class="me-5">
                     <label for="category">Le nostre categorie</label>
-                    <select class="py-0 form-control" wire:model.defer="category" id="category">
+                    <select name='category_id' class="py-0 form-control" wire:model.defer="category" id="category">
+                        
+                        <option disabled value="">{{$selectedCategoryName}}</option>
+             
                         <option value="">Tutte le categorie</option>
+
                         @foreach ($categories as $category)
-                        <option value="{{$category->id}}">
-                            {{$category->name}}
-                        </option>
+                            <option value="{{$category->id}}">
+                                {{$category->name}}
+                            </option>
+
                         @endforeach
                     </select>
+
                 </div>
                 <div class="d-flex flex-column ms-5">
                     <label for="search">Cosa cerchi?</label>

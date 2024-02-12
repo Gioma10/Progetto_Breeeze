@@ -22,9 +22,29 @@ class PublicController extends Controller
         return view('announcements.show', compact('announcement'));
     }
     
-    public function indexAnnouncement(){
+    public function indexAnnouncement(Request $request){
         
-        $announcements = Announcement::all();
-        return view('announcements.index', compact('announcements'));
+        if($request->filled('category_id')) {
+
+            $category = Category::findOrFail($request->category_id);
+
+            $announcements = $category->announcements;
+
+        } else {
+            
+            $announcements = Announcement::all();
+        }
+        
+        // $selectedCategoryId = $request->get('category_id');
+        // $selectedCategoryName = null;
+
+        // if($selectedCategoryId) {
+        //     $selectedCategory = Category::find($selectedCategoryId);
+        //     $selectedCategoryName = $selectedCategory ? $selectedCategory->name : 'Tutte le categorie';
+        // }
+
+        // $announcements = Announcement::all();
+        return view('announcements.index', compact('announcements', 'selectedCategoryName'));
     }
+
 }

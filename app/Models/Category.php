@@ -18,4 +18,9 @@ class Category extends Model
     {
         return $this->hasMany(Announcement::class);
     }
+
+    // public function announcementsByCategory()
+    // {
+    //     return $this->hasMany(Announcement::class, 'category_id', 'id');
+    // }
 }
