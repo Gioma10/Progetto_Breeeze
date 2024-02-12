@@ -18,5 +18,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PublicController::class, 'home'])->name('home');
 Route::get('/annuncio/inserisci', [AnnouncementController::class, 'addAnnouncement'])->name('add-announcement');
-Route::get('/dettaglio/annuncio/{announcement}', [PublicController::class, 'showAnnouncement'])->name('announcements_show');
-Route::get('/tutti/annunci/', [PublicController::class, 'indexAnnouncement'])->name('announcements_index');
+Route::get('/annuncio/{announcement}', [PublicController::class, 'showAnnouncement'])->name('announcements_show');
+Route::get('/annunci/tutti', [PublicController::class, 'indexAnnouncement'])->name('announcements_index');

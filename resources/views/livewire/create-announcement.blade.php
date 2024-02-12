@@ -7,6 +7,7 @@
                         {{session('message')}}
                     </div>
                 @endif
+                
                 <form wire:submit="store">
                     <div class="mb-3">
                         <label for="InputTitle" class="form-label">Titolo</label>
@@ -31,15 +32,21 @@
                         </div>
                     @enderror
                     </div>
-                    <select class="form-control" for="category" wire:model.defer="category" id="category">
-                        @foreach ($categories as $category)
-                            <option value="{{$category->id}}">
-                                {{$category->name}}
-                            </option>
-                        @endforeach
-                    </select>
+                    <select class="form-control" wire:model.defer="category" id="category">
+                       <option value="">Scegli la tua categoria</option>
+                       @foreach ($categories as $category)
+                       <option value="{{$category->id}}">
+                        {{$category->name}}
+                    </option>
+                    @endforeach
+                </select>
+                @error('category')
+                    <div class="text-danger">
+                        {{$message}}
+                    </div>
+                @enderror
 
-                    <button type="submit" class="btn btn-primary">Inserisci Annuncio</button>
+                    <button type="submit" class="mt-3 btn btn-primary">Inserisci Annuncio</button>
                 </form>
             </div>
         </div>

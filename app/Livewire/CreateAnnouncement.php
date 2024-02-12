@@ -18,6 +18,7 @@ class CreateAnnouncement extends Component
         'title'=> 'required|min:5',
         'description'=> 'required|min:15',
         'price'=> 'required|numeric',
+        'category'=> 'required',
     ];
 
     protected $messages = [
@@ -27,6 +28,7 @@ class CreateAnnouncement extends Component
     ];
 
     public function store(){
+        $this->validate();
         $category = Category::find($this->category);
         $announcement=$category->announcements()->create([
             'title'=>$this->title,

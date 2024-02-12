@@ -17,11 +17,7 @@ class AnnouncementController extends Controller
 
     public function addAnnouncement() {
         $titleView = 'Aggiungi Annuncio';
-        return view('addAnnouncement', compact('titleView'));
+        return view('announcements.addAnnouncement', compact('titleView'));
 
-    }
-
-    public function showAnnouncement(Announcement $announcement){
-        return view('announcements_show', compact('announcement'));
     }
 }

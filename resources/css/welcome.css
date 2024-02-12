@@ -1,0 +1,17 @@
+/* generic class */
+.myborder{
+    border: solid 1px red;
+}
+.vh40{
+    height: 40vh;
+}
+.vh20{
+    height: 20vh;
+}
+/* header  */
+header{
+    background-image: url('https://picsum.photos/200');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

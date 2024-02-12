@@ -1,10 +1,37 @@
 <x-layout>
 
     @section('title', $titleView)
-    <header class="vh-100">
+    <header class="vh40">
         <h1>Breeze</h1>
          <a href="{{route('add-announcement')}}" class="btn btn-primary">Inserisci annuncio</a>
     </header>
+    <section class="container my-5 vh20">
+        <div class="row h-100 align-items-center justify-content-center">
+            <div class="col-12 d-flex justify-content-center">
+                <form action="" class="d-flex w-75 myborder py-4 justify-content-center">
+                    <div class="me-5">
+                        <label for="category">Le nostre categorie</label>
+                        <select class="py-0 form-control" wire:model.defer="category" id="category">
+                            <option value="">Tutte le categorie</option>
+                            @foreach ($categories as $category)
+                            <option value="{{$category->id}}">
+                                {{$category->name}}
+                            </option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="d-flex flex-column ms-5">
+                        <label for="search">Cosa cerchi?</label>
+                        <div class="d-flex">
+                            <input id="search" type="text">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <section class="container">
         <div class="row">
             @foreach ($announcements as $announcement)
