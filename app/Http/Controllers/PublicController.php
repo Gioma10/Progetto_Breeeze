@@ -12,7 +12,7 @@ class PublicController extends Controller
     public function home() {
 
         // $announcements = Announcement::take(8)->get()->sortByDesc('created_at');
-        $announcements = Announcement::latest()->take(8)->get();
+        $announcements = Announcement::where('is_accepted', true )->latest()->take(8)->get();
 
         $titleView = "Home Page";
         return view('welcome', compact('titleView', 'announcements'));
@@ -24,15 +24,17 @@ class PublicController extends Controller
     
     public function indexAnnouncement(Request $request){
         
+        
+
         if($request->filled('category_id')) {
 
             $category = Category::findOrFail($request->category_id);
 
-            $announcements = $category->announcements;
+            $announcements = $category->announcements()->where('is_accepted', true )->latest()->paginate(8);
 
         } else {
             
-            $announcements = Announcement::all();
+            $announcements = Announcement::where('is_accepted', true )->latest()->paginate(8);
         }
         
         // $selectedCategoryId = $request->get('category_id');
@@ -45,7 +47,10 @@ class PublicController extends Controller
 
         // $announcements = Announcement::all();
         
+          
+         
         return view('announcements.index', compact('announcements'));
     }
-
+  
+    
 }

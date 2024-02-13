@@ -1,5 +1,5 @@
 <x-layout>
-
+ 
     @section('title', $titleView)
     <header class="vh40">
         <h1>Breeze</h1>
