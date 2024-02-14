@@ -1,4 +1,4 @@
-<nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+<nav class="navbar fixed-top navbar-expand-lg navbar-border">
     <div class="container-fluid">
       <a class="navbar-brand" href="{{route('home')}}">Breeeze</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,12 +40,8 @@
             </li>
             @endif
           
-       @endguest
+          @endguest
         </ul>
-          <form action="{{route('announcement.search')}}" method="GET" class="d-flex">
-            <input type="search" name="searched" class="form-control me-2" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Cerca</button>
-          </form>
       </div>
     </div>
   </nav>

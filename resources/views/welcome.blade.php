@@ -1,11 +1,17 @@
 <x-layout>
  
     @section('title', $titleView)
-    <header class="vh-100">
-        <h1>Breeze</h1>
-         <a href="{{route('add-announcement')}}" class="btn btn-primary">Inserisci annuncio</a>
+
+    <header class="vh-100 text-center padding-header myborder position-relative">
+        <h1>Trova tesori, Libera spazio.</h1>
+        <h2 class="mt-4 pb-4">Ciò che cercavi per i tuoi acquisti consapevoli!</h2>
+        <div>
+            <button class="my-btn mt-5"><a href="{{route('add-announcement')}}" class="a-none">Pubblica Annuncio</a></button>
+        </div>
+        <img src="./storage/img/wave-up.png" alt="sfondo" class="myborder position-absolute bottom-0 end-0">
     </header>
-    <section class="container my-5 vh20">
+
+    <section class="welcome-search container">
         <div class="row h-100 align-items-center justify-content-center">
             <div class="col-12 d-flex justify-content-center">
                 <form action="" class="d-flex w-75 myborder py-4 justify-content-center">

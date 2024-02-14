@@ -1,17 +1,39 @@
-/* generic class */
-.myborder{
-    border: solid 1px red;
-}
-.vh40{
-    height: 40vh;
-}
-.vh20{
-    height: 20vh;
-}
 /* header  */
-header{
-    background-image: url('https://picsum.photos/200');
-    background-position: center;
+
+.padding-header {
+    padding-top: 200px;
+}
+
+/* header{
+    background-color: white;
+    background-image: url("/public/storage/img/wave-up.png");
     background-repeat: no-repeat;
-    background-size: cover;
+    bottom: 0;
+} */
+
+.my-btn {
+    background: linear-gradient(90deg, rgba(126,196,189,1) 0%, rgba(20,82,119,1) 100%);
+    border: 0;
+    padding: 15px 25px;
+    border-radius: 30px;
+}
+
+h1 {
+    font-family: "anybody", Helvetica, sans-serif;
+    font-size: 72px;
+    font-weight: 700;
+}
+
+h2 {
+    font-family: "anybody", Helvetica, sans-serif;
+    font-size: 36px;
+    font-weight: 200;
+}
+
+.my-btn > .a-none {
+    font-size: 36px;
+}
+
+.welcome-search {
+    background-color: var(--my-cyan);
 }

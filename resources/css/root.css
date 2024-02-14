@@ -1,0 +1,35 @@
+:root {
+    --my-cyan: #7ec4bd;
+    --my-blue: #145277;
+    --my-black: #000F0C;
+    --my-gradient: linear-gradient(180deg, rgb(126, 196, 189), rgb(20, 82, 119));
+}
+
+/* generic class */
+
+.a-none {
+    text-decoration: none;
+    color: white;
+}
+
+.myborder{
+    border: solid 1px red;
+}
+.vh40{
+    height: 40vh;
+}
+.vh20{
+    height: 20vh;
+}
+
+
+
+/* h1, h2, h3, h4, h5, h6 {
+    font-family: "Anybody", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: bold;
+    font-variation-settings:
+      "wdth" 900;
+} */
+

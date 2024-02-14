@@ -1,0 +1,5 @@
+.navbar-border {
+    border: 0;
+    border-bottom: 4px solid;
+    border-image: linear-gradient(to right, var(--my-cyan), var(--my-blue)) 1;
+}
