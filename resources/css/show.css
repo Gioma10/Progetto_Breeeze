@@ -1,15 +1,72 @@
-.slide-show-img{
-    overflow: auto;
+.wrapper-image-detail {
+    color: #fff;
+    padding: 3.5em 1em;
+    font-size: 1em;
+    /* grid-area: main; */
+    padding: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+  .container-image-detail {
+    position: relative;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
     white-space: nowrap;
-}
+    transition: all 0.2s;
+    transform: scale(1);
+    will-change: transform;
+    user-select: none;
+    cursor: pointer;
+  }
 
-.slide-show-img img:hover {
-    background-color: red;
-}
+  .container-image-detail.active {
+    background: rgba(255,255,255,0.3);
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    transform: scale(1);
+  }
 
-@media screen and(max-width:768px) { 
+  .image-detail {
+    z-index: -1;
+    display: inline-block;
+    min-height: 250px;
+    min-width: 400px;
+    margin: 2em 1em;
+    @media screen and (max-width: 500px) {
+      min-height: 200px;
+      min-width: 200px;
+    }
     
- .slide-show-img::-webkit-scrollbar {
-  display: none;
+  }
 
-}}
+.image-detail:hover{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+ /* aggiunta dell'evento doppio click */
+ .pop-up{
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.67);
+  top: 0;
+  left: 0;
+ }
+ .pop-up-img{
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  width: 60%;
+ }
+ .pop-up-btn{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  /* transform: translate(-50%); */
+  top: 15%;
+  left: 80%;
+  border-radius: 50%;
+  background: linear-gradient(90deg, rgba(126,196,189,1) 0%, rgba(20,82,119,1) 100%);
+  border: 0;
+  padding: 5px 10px;
+ }

@@ -4,12 +4,13 @@
     padding-top: 200px;
 }
 
-/* header{
+header{
     background-color: white;
     background-image: url("/public/storage/img/wave-up.png");
     background-repeat: no-repeat;
-    bottom: 0;
-} */
+    background-position: bottom;
+    background-size: contain;
+}
 
 .my-btn {
     background: linear-gradient(90deg, rgba(126,196,189,1) 0%, rgba(20,82,119,1) 100%);

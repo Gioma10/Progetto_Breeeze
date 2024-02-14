@@ -1,28 +1,30 @@
 <x-layout>
-   <div class="container-fluid my-2">
-     <div class="row ">
-        <div class="col-12 col-md-12 ">
-            <h1 class="text-center">Dettaglio Annuncio {{$announcement->title}}</h1>
-           
+    <div class="container-fluid my-2">
+        <div class="row">
+            <div class="col-12 col-md-12 ">
+                <h1 class="text-center">Dettaglio Annuncio {{$announcement->title}}</h1>
+            </div>
         </div>
-     </div>
-     
-     <div class="row justify-content-center">
-         <div class="col-12 col-md-6 slide-show-img">
-
-             <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
-             <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
-             <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
-             <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
-             <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
-             <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
-             <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
-            
-             
+        <div class="row justify-content-center ms-5 ">
+            <div class="col-12 col-md-12 p-0 myborder">
+                <div id="wrapperItems" class="wrapper-image-detail">
+                    <div class="container-image-detail">
+                        <img src="https://picsum.photos/300/200" class="image-detail">
+                        <img src="https://picsum.photos/300/200" class="image-detail">
+                        <img src="https://picsum.photos/300/200" class="image-detail">
+                        <img src="https://picsum.photos/300/200" class="image-detail">
+                        <img src="https://picsum.photos/300/200" class="image-detail">
+                        <img src="https://picsum.photos/300/200" class="image-detail">
+                        <img src="https://picsum.photos/300/200" class="image-detail">
+                        <img src="https://picsum.photos/300/200" class="image-detail">
+                        <img src="https://picsum.photos/300/200" class="image-detail">
+                        <img src="https://picsum.photos/300/200" class="image-detail">
+                    </div>
+                </div>
+                {{-- <div class="ciao"></div> --}}
             </div>
         </div>
     </div>
-
     <div class="container ">
         <div class="row justify-content-center">
             <div class="col-12 col-md-4">

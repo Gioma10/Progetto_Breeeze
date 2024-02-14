@@ -2,13 +2,12 @@
  
     @section('title', $titleView)
 
-    <header class="vh-100 text-center padding-header myborder position-relative">
+    <header class="vh-100 text-center padding-header position-relative">
         <h1>Trova tesori, Libera spazio.</h1>
         <h2 class="mt-4 pb-4">Ciò che cercavi per i tuoi acquisti consapevoli!</h2>
         <div>
             <button class="my-btn mt-5"><a href="{{route('add-announcement')}}" class="a-none">Pubblica Annuncio</a></button>
         </div>
-        <img src="./storage/img/wave-up.png" alt="sfondo" class="myborder position-absolute bottom-0 end-0">
     </header>
 
     <section class="welcome-search container">
