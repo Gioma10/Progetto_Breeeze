@@ -1,7 +1,7 @@
 <x-layout>
  
     @section('title', $titleView)
-    <header class="vh40">
+    <header class="vh-100">
         <h1>Breeze</h1>
          <a href="{{route('add-announcement')}}" class="btn btn-primary">Inserisci annuncio</a>
     </header>

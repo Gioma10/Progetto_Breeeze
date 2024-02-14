@@ -30,11 +30,11 @@ class PublicController extends Controller
 
             $category = Category::findOrFail($request->category_id);
 
-            $announcements = $category->announcements()->where('is_accepted', true )->latest()->paginate(8);
+            $announcements = $category->announcements()->where('is_accepted', true )->latest()->paginate(8)->withQueryString();
 
         } else {
             
-            $announcements = Announcement::where('is_accepted', true )->latest()->paginate(8);
+            $announcements = Announcement::where('is_accepted', true )->latest()->paginate(8)->withQueryString();
         }
         
         // $selectedCategoryId = $request->get('category_id');
@@ -52,5 +52,11 @@ class PublicController extends Controller
         return view('announcements.index', compact('announcements'));
     }
   
+    public function searchAnnouncements(Request $request)
+    {
+        $announcements = Announcement::search($request->searched)->where('is_accepted', true)->paginate(10);
+        
+        return view('announcements.index', compact('announcements'));
+    }
     
 }

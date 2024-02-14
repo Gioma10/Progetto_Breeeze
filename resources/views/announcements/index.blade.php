@@ -19,12 +19,9 @@
                     </div>
                     <div class="d-flex flex-column ms-5">
                         <label for="search">Cosa cerchi?</label>
-                        <div class="d-flex">
-                            <input id="search" type="text">
-                            <button type="submit"><i class="fa fa-search"></i></button>
-                        </div>
                     </div>
                 </form>
+                <x-searchbar/>
             </div>
         </div>
     </section>
@@ -32,7 +29,34 @@
     <div class="row ">
         <div class="col-12 ">
             <div class="row ">
-                @foreach ($announcements as $announcement)
+
+               @forelse ($announcements as $announcement)
+               <div class="col-6 col-md-3 my-5  ">
+                <div class="card shadow">
+                   <img src="" alt="">
+                   <div class="card-body">
+                       <img src="https://picsum.photos/200" class="card-img-top p-3 rounded" alt="...">
+                       <div class="card-body">
+                         <h5 class="card-title">{{$announcement->title}}</h5>
+                         <p class="card-text">{{$announcement->body}}</p>
+                         <p class="card-text">{{$announcement->price}}</p>
+                         <a href="{{route('announcements_show',$announcement) }}" class="btn btn-primary shadow">Visualizza</a>
+                         <a href="#" class="my-2 border-top pt-2 border-dark card-link shadow btn btn-success">Categoria: {{$announcement->category->name}}</a>
+                         <p class="card-footer">Pubblicato il: {{$announcement->created_at->format('d/m/Y')}}</p>
+                   </div>
+                </div>
+           </div>
+           </div>
+               @empty
+                   <div class="col-12">
+                        <div class="alert alert-warning">
+                            <p>Non sono stati trovati announci per questa ricerca. Riprova.</p>
+                        </div>
+                   </div>
+               @endforelse 
+               {{$announcements->links()}}
+
+                {{-- @foreach ($announcements as $announcement)
                 <div class="col-6 col-md-3 my-5  ">
                      <div class="card shadow">
                         <img src="" alt="">
@@ -48,11 +72,12 @@
                         </div>
                      </div>
                 </div>
+                </div>
+                @endforeach
+                {{$announcements->links()}} --}}
             </div>
-            @endforeach 
-            {{$announcements->links()}}
         </div>
     </div>
-  </div>
+ </div>
 
 </x-layout>
