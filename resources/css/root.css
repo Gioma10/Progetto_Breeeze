@@ -5,6 +5,12 @@
     --my-gradient: linear-gradient(180deg, rgb(126, 196, 189), rgb(20, 82, 119));
 }
 
+/* colori e sfondi di progetto */
+
+.my-color-blue {
+    color: var(--my-blue);
+}
+
 /* generic class */
 
 .a-none {
@@ -25,14 +31,4 @@
 body{
     margin: 0;
 }
-
-
-/* h1, h2, h3, h4, h5, h6 {
-    font-family: "Anybody", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: weight;
-    font-style: bold;
-    font-variation-settings:
-      "wdth" 900;
-} */
 

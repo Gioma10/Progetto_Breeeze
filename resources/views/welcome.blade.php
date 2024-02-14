@@ -3,14 +3,18 @@
     @section('title', $titleView)
 
     <header class="vh-100 text-center padding-header position-relative">
-        <h1>Trova tesori, Libera spazio.</h1>
-        <h2 class="mt-4 pb-4">Ciò che cercavi per i tuoi acquisti consapevoli!</h2>
+        <h1 class="my-color-blue">Trova tesori, Libera spazio.</h1>
+        <h2 class="mt-4 pb-4 my-color-blue">Ciò che cercavi per i tuoi acquisti consapevoli!</h2>
         <div>
             <button class="my-btn mt-5"><a href="{{route('add-announcement')}}" class="a-none">Pubblica Annuncio</a></button>
         </div>
+        <div class="position-absolute bottom-0 start-50 translate-middle">
+            <h3 class="my-color-blue m-0">Torva l'articolo che desideri</h3>
+            <i class="fa-solid fa-sort-down fs-2 my-color-blue"></i>
+        </div>
     </header>
 
-    <section class="welcome-search container">
+    <section class="welcome-search container-fluid bg-my-cyan">
         <div class="row h-100 align-items-center justify-content-center">
             <div class="col-12 d-flex justify-content-center">
                 <form action="" class="d-flex w-75 myborder py-4 justify-content-center">

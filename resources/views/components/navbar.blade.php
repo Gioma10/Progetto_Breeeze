@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-border">
+<nav class="navbar fixed-top navbar-border bg-light">
     <div class="container-fluid">
       {{-- <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -48,7 +48,7 @@
           </ul>
         </div>
       </div>
-      <a class="navbar-brand mx-auto" href="{{route('home')}}">Breeeze</a>
+      <a class="navbar-brand mx-auto" href="{{route('home')}}"><img src="./public/storage/img/breeeze-logo.png" alt="">Breeeze</a>
       <button class=""><i class="fa-solid fa-user"></i></button>
     </div>
   </nav>
