@@ -12,13 +12,21 @@
         <div class="row justify-content-center">
         
             <div class="col-12 col-md-6 slide-show-img">
-                <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
-                <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
-                <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
-                <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
-                <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
-                <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
-                <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
+                @if ($announcement_to_check->images)
+                    @foreach ($announcement_to_check->images as $image)
+                        <div class="@if($loop->first)active @endif">
+                            <img src="{{Storage::url($image->path)}}" class="img-fluid p-3 rounded" alt="...">
+                        </div>
+                    @endforeach
+                @else
+                    <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
+                    <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
+                    <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
+                    <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
+                    <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
+                    <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
+                    <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
+                @endif
             </div>
             <div >
                 <h5 class="card-title mt-3">Titolo : {{$announcement_to_check->title}}</h5>

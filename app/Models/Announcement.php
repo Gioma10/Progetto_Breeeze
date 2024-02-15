@@ -52,5 +52,9 @@ class Announcement extends Model
         ];
         return $array;
     }
+
+    public function images(){
+        return $this->hasMany(Image::class);
+    }
     
 }

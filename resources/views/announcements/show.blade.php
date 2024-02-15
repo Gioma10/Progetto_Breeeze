@@ -9,6 +9,22 @@
             <div class="col-12 col-md-12 p-0 myborder">
                 <div id="wrapperItems" class="wrapper-image-detail">
                     <div class="container-image-detail">
+                        @if ($announcement->images)
+                            @foreach ($announcement->images as $image)
+                                <div class="@if($loop->first)active @endif">
+                                    <img src="{{Storage::url($image->path)}}" class="img-fluid p-3 rounded" alt="...">
+                                </div>
+                             @endforeach
+                        @else
+                            <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
+                            <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
+                            <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
+                            <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
+                            <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
+                            <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
+                            <img src="https://picsum.photos/200" class="d-inline-block p-2" alt="">
+                        @endif
+                        {{-- <img src="https://picsum.photos/300/200" class="image-detail">
                         <img src="https://picsum.photos/300/200" class="image-detail">
                         <img src="https://picsum.photos/300/200" class="image-detail">
                         <img src="https://picsum.photos/300/200" class="image-detail">
@@ -17,8 +33,7 @@
                         <img src="https://picsum.photos/300/200" class="image-detail">
                         <img src="https://picsum.photos/300/200" class="image-detail">
                         <img src="https://picsum.photos/300/200" class="image-detail">
-                        <img src="https://picsum.photos/300/200" class="image-detail">
-                        <img src="https://picsum.photos/300/200" class="image-detail">
+                        <img src="https://picsum.photos/300/200" class="image-detail"> --}}
                     </div>
                 </div>
                 {{-- <div class="ciao"></div> --}}
