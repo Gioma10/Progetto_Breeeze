@@ -3,7 +3,7 @@
     @section('title', $titleView)
 
     <header class="vh-100 text-center padding-header position-relative">
-        <h1 class="my-color-blue">Trova tesori, Libera spazio.</h1>
+        <h1 class="my-color-blue">{{__('ui.welcomeTitle')}}</h1>
         <h2 class="mt-4 pb-4 my-color-blue">Ciò che cercavi per i tuoi acquisti consapevoli!</h2>
         <div>
             <button class="my-btn mt-5"><a href="{{route('add-announcement')}}" class="a-none">Pubblica Annuncio</a></button>

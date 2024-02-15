@@ -25,11 +25,21 @@
             <li class="nav-item">
               <a class="nav-link" href="{{route('announcements_index')}}">Tutti gli annunci</a>
             </li>
+            <li class="nav-item">
+              <x-_locale lang="it"/>
+            </li>
+            <li class="nav-item">
+              <x-_locale lang="en"/>
+            </li>
+            <li class="nav-item">
+              <x-_locale lang="es"/>
+            </li>
             @guest
               <li>
                 <a class="d-inline nav-link" href="{{route('login')}}">Accedi / </a> 
                 <a class="nav-link d-inline" href="{{route('register')}}">Registrati</a>
-              </li>                  
+              </li>   
+
             @endguest
             @auth
               @if (Auth::user()->is_revisor)
