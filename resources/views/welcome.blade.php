@@ -13,54 +13,76 @@
         </div>
     </header>
     {{-- welcome search  --}}
-    <section class="welcome-search container-fluid bg-my-cyan">
-        <div class="row h-100 align-items-center justify-content-center">
-            <div class="col-12 d-flex justify-content-center">
-                <form action="" class="d-flex w-75 myborder py-4 justify-content-center">
-                    <div class="me-5">
-                        <label for="category">Le nostre categorie</label>
-                        <select class="py-0 form-control" wire:model.defer="category" id="category">
-                            <option value="">Tutte le categorie</option>
-                            @foreach ($categories as $category)
-                            <option value="{{$category->id}}">
-                                {{$category->name}}
-                            </option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="d-flex flex-column ms-5">
-                        <label for="search">Cosa cerchi?</label>
-                        <div class="d-flex">
-                            <input id="search" type="text">
-                            <button type="submit"><i class="fa fa-search"></i></button>
+    <section class="s1">
+        <section class=" welcome-search container-fluid bg-my-cyan">
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-12 d-flex justify-content-center">
+                    <form action="" class="d-flex w-75 myborder py-4 justify-content-center">
+                        <div class="me-5">
+                            <label for="category">Le nostre categorie</label>
+                            <select class="py-0 form-control" wire:model.defer="category" id="category">
+                                <option value="">Tutte le categorie</option>
+                                @foreach ($categories as $category)
+                                <option value="{{$category->id}}">
+                                    {{$category->name}}
+                                </option>
+                                @endforeach
+                            </select>
                         </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-    {{-- carosello annunci infinito --}}
-    <section class="container-fluid">
-        <div class="row justify-content-center myborder">
-            <div class="infinite-carousel myborder w-100">
-                <div>
-                    @foreach ($announcements as $announcement)
-                    <div class="col-md-2 d-flex justify-content-center">
-                        <div class="infinite-card card shadow">
-                            <img src="{{!$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path): 'https://picsum.photos/200'}}" class="card-img-top p-3 rounded" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">{{$announcement->title}}</h5>
-                              <p class="card-text">{{$announcement->body}}</p>
-                              <p class="card-text">{{$announcement->price}}</p>
-                              <a href="{{route('announcements_show', compact('announcement'))}}" class="btn btn-primary shadow">Visualizza</a>
-                              <a href="#" class="my-2 border-top pt-2 border-dark card-link shadow btn btn-success">Categoria: {{$announcement->category->name}}</a>
-                              <p class="card-footer">Pubblicato il: {{$announcement->created_at->format('d/m/Y')}}</p>
+                        <div class="d-flex flex-column ms-5">
+                            <label for="search">Cosa cerchi?</label>
+                            <div class="d-flex">
+                                <input id="search" type="text">
+                                <button type="submit"><i class="fa fa-search"></i></button>
                             </div>
-                          </div>
-                    </div>
-                    @endforeach   
+                        </div>
+                    </form>
                 </div>
             </div>
+        </section>
+        {{-- carosello annunci infinito --}}
+        <section class="container-fluid">
+            <div class="row justify-content-center myborder">
+                <div class="infinite-carousel myborder w-100">
+                    <div>
+                        @foreach ($announcements as $announcement)
+                        <div class="col-md-2 d-flex justify-content-center">
+                            <div class="card shadow">
+                                <img src="{{!$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path): 'https://picsum.photos/200'}}" class="card-img-top p-3 rounded" alt="...">
+                                <div class="card-body">
+                                <h5 class="card-title">{{$announcement->title}}</h5>
+                                <p class="card-text">{{$announcement->body}}</p>
+                                <p class="card-text">{{$announcement->price}}</p>
+                                <a href="{{route('announcements_show', compact('announcement'))}}" class="btn btn-primary shadow">Visualizza</a>
+                                <a href="#" class="my-2 border-top pt-2 border-dark card-link shadow btn btn-success">Categoria: {{$announcement->category->name}}</a>
+                                <p class="card-footer">Pubblicato il: {{$announcement->created_at->format('d/m/Y')}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach   
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+    {{-- card esempio per le misure e tutto il resto...  --}}
+    <section class="vh-100">
+        <div class="row">
+            <div class="col-12 col-md-3 myborder">
+                <div class="card">
+                    <img class="card-img-top img-custom img-fluid" src="https://picsum.photos/200/300" alt="Card image cap">
+                    <div class="card-body body-custom">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <p>Categoria</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+            </div>
         </div>
     </section>
+
+    
 </x-layout>

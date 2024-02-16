@@ -10,13 +10,62 @@ header{
     background-position: bottom;
     background-size: contain;
 }
+ /* button inserisci annuncio */
 
+
+/* CSS */
 .my-btn {
+  appearance: none;
+  background: linear-gradient(90deg, rgba(126,196,189,0.7) 0%, rgba(20,82,119,0.7) 100%);
+  border: 0;
+  padding: 15px 25px;
+  border-radius: 30px;
+  display: inline-block;
+  position: relative;
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+
+}
+
+.my-btn:before {
+  animation: opacityFallbackOut .5s step-end forwards;
+  backface-visibility: hidden;
+  background: linear-gradient(90deg, rgba(126,196,189,1) 0%, rgba(20,82,119,1) 100%);
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  padding: 15px 25px;
+  border-radius: 30px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.my-btn:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.my-btn:after {
+  background-color: #FFFFFF;
+}
+
+.my-btn a {
+  z-index: 1;
+  position: relative;
+}
+/* .my-btn {
     background: linear-gradient(90deg, rgba(126,196,189,1) 0%, rgba(20,82,119,1) 100%);
     border: 0;
     padding: 15px 25px;
     border-radius: 30px;
-}
+} */
 
 h1 {
     font-family: "anybody", Helvetica, sans-serif;
@@ -46,7 +95,15 @@ h3 {
     font-size: 36px;
 }
 
+/* card and search  */
 /* sezione search  */
+.s1{
+    background-color: white;
+    background-image: url("/public/storage/images/welcome/wave-down.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+}
 .welcome-search {
     background-color: var(--my-cyan);
 }
@@ -78,3 +135,7 @@ h3 {
         transform: translate(calc(-50% - 1.5em));
     }
 }
+
+/* .mycard{
+    max-height: 70%;
+} */

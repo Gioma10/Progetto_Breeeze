@@ -5,5 +5,5 @@ const carouselContent= Array.from(carouselInner.children);
 carouselContent.forEach((item) => {
     const cloneItem= item.cloneNode(true);
     carouselInner.appendChild(cloneItem);
-    // carouselInner.style.animation= "move 12s"
+    // carouselInner.style.animation= "move 12s linear infinite"
 });
