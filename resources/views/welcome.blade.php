@@ -1,7 +1,6 @@
 <x-layout>
- 
     @section('title', $titleView)
-
+    {{-- header  --}}
     <header class="vh-100 text-center padding-header position-relative">
         <h1 class="my-color-blue">{{__('ui.welcomeTitle')}}</h1>
         <h2 class="mt-4 pb-4 my-color-blue">Ciò che cercavi per i tuoi acquisti consapevoli!</h2>
@@ -13,7 +12,7 @@
             <i class="fa-solid fa-sort-down fs-2 my-color-blue"></i>
         </div>
     </header>
-
+    {{-- welcome search  --}}
     <section class="welcome-search container-fluid bg-my-cyan">
         <div class="row h-100 align-items-center justify-content-center">
             <div class="col-12 d-flex justify-content-center">
@@ -40,24 +39,28 @@
             </div>
         </div>
     </section>
-
-    <section class="container">
-        <div class="row">
-            @foreach ($announcements as $announcement)
-            <div class="col-md-3 my-3">
-                <div class="card shadow" style="width: 18rem;">
-                    <img src="{{!$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path): 'https://picsum.photos/200'}}" class="card-img-top p-3 rounded" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">{{$announcement->title}}</h5>
-                      <p class="card-text">{{$announcement->body}}</p>
-                      <p class="card-text">{{$announcement->price}}</p>
-                      <a href="{{route('announcements_show', compact('announcement'))}}" class="btn btn-primary shadow">Visualizza</a>
-                      <a href="#" class="my-2 border-top pt-2 border-dark card-link shadow btn btn-success">Categoria: {{$announcement->category->name}}</a>
-                      <p class="card-footer">Pubblicato il: {{$announcement->created_at->format('d/m/Y')}}</p>
+    {{-- carosello annunci infinito --}}
+    <section class="container-fluid">
+        <div class="row justify-content-center myborder">
+            <div class="infinite-carousel myborder w-100">
+                <div>
+                    @foreach ($announcements as $announcement)
+                    <div class="col-md-2 d-flex justify-content-center">
+                        <div class="infinite-card card shadow">
+                            <img src="{{!$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path): 'https://picsum.photos/200'}}" class="card-img-top p-3 rounded" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title">{{$announcement->title}}</h5>
+                              <p class="card-text">{{$announcement->body}}</p>
+                              <p class="card-text">{{$announcement->price}}</p>
+                              <a href="{{route('announcements_show', compact('announcement'))}}" class="btn btn-primary shadow">Visualizza</a>
+                              <a href="#" class="my-2 border-top pt-2 border-dark card-link shadow btn btn-success">Categoria: {{$announcement->category->name}}</a>
+                              <p class="card-footer">Pubblicato il: {{$announcement->created_at->format('d/m/Y')}}</p>
+                            </div>
+                          </div>
                     </div>
-                  </div>
+                    @endforeach   
+                </div>
             </div>
-            @endforeach   
         </div>
     </section>
 </x-layout>

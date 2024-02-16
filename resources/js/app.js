@@ -1,3 +1,3 @@
-
 import 'bootstrap';
-import './show';
+import './show.js';
+import './welcome.js';

@@ -1,12 +1,11 @@
 /* header  */
-
 .padding-header {
     padding-top: 200px;
 }
 
 header{
     background-color: white;
-    background-image: url("/public/storage/img/wave-up.png");
+    background-image: url("/public/storage/images/welcome/wave-up.png");
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: contain;
@@ -47,6 +46,35 @@ h3 {
     font-size: 36px;
 }
 
+/* sezione search  */
 .welcome-search {
     background-color: var(--my-cyan);
+}
+
+/* carosello annunci infinito  */
+.infinite-carousel{
+    margin:2em 0;
+    width: 90%;
+    overflow: hidden;
+    mask: linear-gradient(90deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,1)15%, rgba(255,255,255,1) 85%, rgba(255,255,255,0.5) 100%);
+
+}
+.infinite-carousel>div{
+    width: max-content;
+    padding: 1em 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 3em;
+    list-style: none;
+    animation: move 30s linear infinite; 
+}
+/* .card{
+    max-width: 20em;
+} */
+
+@keyframes move {
+    to{
+        transform: translate(calc(-50% - 1.5em));
+    }
 }
