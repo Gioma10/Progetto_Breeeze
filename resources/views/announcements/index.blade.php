@@ -32,7 +32,7 @@
             @forelse ($announcements as $announcement)
                 <div class="col-6 col-md-3 my-5  ">
                     <div class="card shadow">
-                        <img src="{{!$announcement->images()->get()->isEmpty() ? Storage::url($announcement->images()->first()->path):'https://picsum.photos/200'}}" class="card-img-top p-3 rounded" alt="..."/>
+                        <img src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(400, 300):'https://picsum.photos/200'}}" class="card-img-top p-3 rounded" alt="..."/>
                         <div class="card-body">
                             <h5 class="card-title">{{$announcement->title}}</h5>
                             <p class="card-text">{{$announcement->body}}</p>

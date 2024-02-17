@@ -69,20 +69,49 @@
 
     {{-- card esempio per le misure e tutto il resto...  --}}
     <section class="vh-100">
-        <div class="row">
-            <div class="col-12 col-md-3 myborder">
-                <div class="card">
-                    <img class="card-img-top img-custom img-fluid" src="https://picsum.photos/200/300" alt="Card image cap">
-                    <div class="card-body body-custom">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <p>Categoria</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="row justify-content-center">
+            <div class="col-3  myborder d-flex justify-content-center">
+                <div class="my-card ">
+                    <div class="p-4">
+
+                        <img src="https://picsum.photos/300/300" alt="" class=" object-fit-cover img-custom ">
                     </div>
-                  </div>
+
+                    <div class=" flex-column gab-3  px-4">
+                        <div class="d-flex align-items-center  justify-content-center">
+                            <span class="badge px-3 py-1 ">stock ready</span>
+                            
+                        </div>
+                         <h2 class="product-title my-2 ">Best Headphone </h2>
+                        <div class="">
+                            <span class="text-xl font-weight-bold ">
+                               $ 400
+                            </span>
+                           
+
+                        </div>
+                        <div>
+                            <p>Data:</p>
+                        </div>
+                        <div class=" gap-2 d-flex justify-content-around pb-2">
+                            <button class="button-primary px-5 py-2 rounded"> 
+                                Add to cart
+
+                            </button>
+                            <button class="rounded opacity-50 d-flex justify-content-center align-items-center px-3">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+             
             </div>
         </div>
     </section>
+    
+   
+  
 
     
 </x-layout>
