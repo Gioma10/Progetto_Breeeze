@@ -4,12 +4,12 @@
     {{-- header  --}}
     <header class="vh-100 text-center padding-header position-relative">
         <h1 class="my-color-blue">{{__('ui.welcomeTitle')}}</h1>
-        <h2 class="mt-4 pb-4 my-color-blue">Ciò che cercavi per i tuoi acquisti consapevoli!</h2>
+        <h2 class="mt-4 pb-4 my-color-blue">{{__('ui.welcomeSubtitle')}}</h2>
         <div>
-            <button class="my-btn mt-5"><a href="{{route('add-announcement')}}" class="a-none">Pubblica Annuncio</a></button>
+            <button class="my-btn mt-5"><a href="{{route('add-announcement')}}" class="a-none">{{__('ui.welcomeButton')}}</a></button>
         </div>
         <div class="position-absolute bottom-0 start-50 translate-middle">
-            <h3 class="my-color-blue m-0">Trova l'articolo che desideri</h3>
+            <h3 class="my-color-blue m-0">{{__('ui.findArticles')}}</h3>
             <a href="#main"><i class="fa-solid fa-sort-down fs-2 my-color-blue" ></i></a>
         </div>
     </header>
@@ -22,10 +22,10 @@
                 {{-- div ricerca --}}
                 <div class="col-5 d-flex justify-content-center">
                     <form action="{{route('announcements_index')}}" method="GET" class="d-flex flex-column w-100 justify-content-center">
-                        <label for="category">Filtra per categoria</label>
+                        <label for="category">{{__('ui.categoryFilter')}}</label>
                         <div class="mt-1 position-relative w-75">
                             <select class="w-100 input-default" name='category_id' class="py-0 form-control" wire:model.defer="category" id="category">
-                                <option value="">Tutte le categorie</option>
+                                <option value="">{{__('allCategory')}}</option>
                                 @foreach ($categories as $category)
                                     <option value="{{$category->id}}" {{(request('category_id') == $category->id) ? 'selected' : ''}}>
                                         {{$category->name}}
@@ -57,7 +57,7 @@
                                         <div class="shadow"></div>
                                             <img src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(400, 300):'https://picsum.photos/200'}}"  class="img-custom" alt=""/>
                                             <div class="image_overlay"></div>
-                                            <div ><a href="{{route('announcements_show',$announcement) }}" class="view_details">Visualizza</a></div>
+                                            <div ><a href="{{route('announcements_show',$announcement) }}" class="view_details">{{__('viewDetails')}}</a></div>
                                             <div class="stats">
                                                 <div class="stats-container">
                                                     <span class="product_price">$ {{$announcement->price}}</span>
@@ -65,9 +65,9 @@
                                                     <p>{{$announcement->category->name}}</p>
                 
                                                     <div class="product-options">
-                                                        <strong>Data di pubblicazione:{{$announcement->created_at->format('d/m/Y')}}</strong> 
+                                                        <strong>{{__('publishedDate')}}{{$announcement->created_at->format('d/m/Y')}}</strong> 
                                                         <span></span>
-                                                        <strong>Pubblicato da: {{$announcement->user->name}}</strong>
+                                                        <strong>{{__('publishFrom')}}{{$announcement->user->name}}</strong>
                                                     </div>
                                                 </div>
                                             </div>
@@ -97,7 +97,7 @@
     <section class="container-fluid vh-100 s2">
         <div class="row h-100">
             <div class="col-12 myborder">
-                <h3>Diventa un Breeze Master!</h3>
+                <h3>{{__('breezeMaster')}}</h3>
             </div>
 
             <div class="col-6 myborder">
@@ -107,12 +107,12 @@
                   </div>
 
                   <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Parlaci di te</label>
+                    <label for="formGroupExampleInput2" class="form-label">{{__('aboutYou')}}</label>
                     <input type="textarea" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
                   </div>
 
                   <div class="mb-3">
-                    <label for="formGroupExampleInput2" class="form-label">Allega CV</label>
+                    <label for="formGroupExampleInput2" class="form-label">{{__('yourCV')}}</label>
                     <input type="file" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
                   </div>
             </div>

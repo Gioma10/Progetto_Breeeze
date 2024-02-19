@@ -14,7 +14,7 @@
       </button>
       <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Ciao @auth{{Auth::user()->name}}@endauth</h5>
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">{{__('ui.navbarHello')}} @auth{{Auth::user()->name}}@endauth</h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -23,7 +23,7 @@
               <a class="nav-link" aria-current="page" href="{{route('home')}}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('announcements_index')}}">Tutti gli annunci</a>
+              <a class="nav-link" href="{{route('announcements_index')}}">{{__('ui.navbarAnnouncements')}}</a>
             </li>
             
             
@@ -38,22 +38,22 @@
             
             @guest
               <li>
-                <a class="d-inline nav-link" href="{{route('login')}}">Accedi / </a> 
-                <a class="nav-link d-inline" href="{{route('register')}}">Registrati</a>
+                <a class="d-inline nav-link" href="{{route('login')}}">{{__('ui.navbarLogin')}}</a> 
+                <a class="nav-link d-inline" href="{{route('register')}}">{{__('ui.navbarRegister')}}</a>
               </li>   
 
             @endguest
             @auth
               @if (Auth::user()->is_revisor)
                 <li class="">
-                  <a class="nav-link position-relative d-inline" href="{{route('revisor.index')}}">Zona revisore
+                  <a class="nav-link position-relative d-inline" href="{{route('revisor.index')}}">{{__('ui.navbarRevisor')}}
                     <span class="position-absolute counter-revisor badge rounded-pill bg-danger ">{{App\Models\announcement::toBeRevisionedCount()}}</span>
-                    <span class="visually-hidden">unread messages</span>
+                    <span class="visually-hidden">{{__('ui.navbarUnread')}}</span>
                   </a>
                 </li>
               @endif
               <li>
-                <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Esci</a>
+                <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">{{__('ui.navbarExit')}}</a>
               </li>
               <form action="{{route('logout')}}" method="POST" id="form-logout" class="d-none">@csrf</form>
             @endauth
