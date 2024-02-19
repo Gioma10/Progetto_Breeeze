@@ -30,11 +30,11 @@ class PublicController extends Controller
 
             $category = Category::findOrFail($request->category_id);
 
-            $announcements = $category->announcements()->where('is_accepted', true )->latest()->paginate(8)->withQueryString();
+            $announcements = $category->announcements()->where('is_accepted', true )->latest()->paginate(9)->withQueryString();
 
         } else {
             
-            $announcements = Announcement::where('is_accepted', true )->latest()->paginate(8)->withQueryString();
+            $announcements = Announcement::where('is_accepted', true )->latest()->paginate(9)->withQueryString();
         }
         
         // $selectedCategoryId = $request->get('category_id');

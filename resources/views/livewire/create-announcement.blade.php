@@ -1,6 +1,6 @@
 <div>
-    <div class="container">
-        <div class="row">
+    <div class="container padding-header pb-5">
+        <div class="row  justify-content-center">
             <div class="col-10">
                 @if (session()->has('message'))
                     <div class="flex flex-row justify-center my-2 alert alert-success">

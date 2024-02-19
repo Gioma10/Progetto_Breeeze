@@ -2,8 +2,8 @@
 
     @section('title', 'Registrati')
 
-    <div class="container">
-        <div class="row">
+    <div class="container mt100">
+        <div class="row justify-content-center">
             <div class="col-10">
                 <form action="{{route('register')}}" method="POST">
 

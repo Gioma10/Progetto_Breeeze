@@ -17,8 +17,8 @@
     {{-- welcome search  --}}
     <section class="s1" id="main">
         {{-- form filtri  --}}
-        <section class="container vh20 px-5 py-3">
-            <div class="row h-100 align-items-center justify-content-center form-search">
+        <section class="container vh20 px-5 py-3 ">
+            <div class="row h-100 align-items-center justify-content-center form-search mt-5">
                 {{-- div ricerca --}}
                 <div class="col-5 d-flex justify-content-center">
                     <form action="{{route('announcements_index')}}" method="GET" class="d-flex flex-column w-100 justify-content-center">
@@ -45,13 +45,36 @@
        
         
         {{-- carosello annunci infinito --}}
-        <section class="container-fluid">
+        <section class="container-fluid vh80 mt-5">
             <div class="row justify-content-center myborder py-4">
                 <div class="infinite-carousel myborder w-100">
                     <div>
                         @foreach ($announcements as $announcement)
-                            <div class="col-md-2 d-flex justify-content-center">
-                                <div class="card shadow">
+                            <div class="col-md-1 d-flex justify-content-center">
+                                <div class="make-3D-space custom-shadow ">
+                                    <div class="product-card rounded">
+                                        <div class="product-front">
+                                        <div class="shadow"></div>
+                                            <img src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(400, 300):'https://picsum.photos/200'}}"  class="img-custom" alt=""/>
+                                            <div class="image_overlay"></div>
+                                            <div ><a href="{{route('announcements_show',$announcement) }}" class="view_details">Visualizza</a></div>
+                                            <div class="stats">
+                                                <div class="stats-container">
+                                                    <span class="product_price">$ {{$announcement->price}}</span>
+                                                    <span class="product_name">{{$announcement->title}}</span>
+                                                    <p>{{$announcement->category->name}}</p>
+                
+                                                    <div class="product-options">
+                                                        <strong>Data di pubblicazione:{{$announcement->created_at->format('d/m/Y')}}</strong> 
+                                                        <span></span>
+                                                        <strong>Pubblicato da: {{$announcement->user->name}}</strong>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                                {{-- <div class="card shadow">
                                     <img src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(400, 300) : 'https://picsum.photos/200'}}" class="card-img-top p-3 rounded" alt="...">
                                     <div class="card-body">
                                     <h5 class="card-title">{{$announcement->title}}</h5>
@@ -61,7 +84,7 @@
                                     <a href="#" class="my-2 border-top pt-2 border-dark card-link shadow btn btn-success">Categoria: {{$announcement->category->name}}</a>
                                     <p class="card-footer">Pubblicato il: {{$announcement->created_at->format('d/m/Y')}}</p>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         @endforeach   
                     </div>
@@ -101,42 +124,6 @@
 
     </section>
 
-    {{-- card esempio per le misure e tutto il resto...  --}}
-    <section class="vh-20">
-        <div class="row justify-content-center">
-            <div class="col-3  myborder d-flex justify-content-center">
-
-                <div class="make-3D-space">
-                    <div class="product-card">
-                        <div class="product-front">
-                          <div class="shadow"></div>
-                            <img src="https://picsum.photos/200/300"  class="img-custom" alt=""/>
-                            <div class="image_overlay"></div>
-                            <div class="view_details">View Details</a></div>
-                            <div class="stats">
-                                <div class="stats-container">
-                                    <span class="product_price">$39</span>
-                                    <span class="product_name">Adidas Originals</span>
-                                    <p>Lorem ipsum dolor sit amet</p>
-
-                                    <div class="product-options">
-                                    <strong>Data pubblicazione: 14/04/2000</strong> 
-                                    <span></span>
-                                    <strong>Pubblicato da : Konrad Nowak</strong>
-
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-             
-            </div>
-        </div>
-    </section>
-    
-   
   
 
     

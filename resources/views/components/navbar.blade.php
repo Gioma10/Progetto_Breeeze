@@ -9,8 +9,8 @@
       </a> --}}
       
       {{-- Off-canvas Menu --}}
-      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-        <i class="fa-solid fa-bars"></i>
+      <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <i class="fa-solid fa-bars fa-lg"></i>
       </button>
       <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
@@ -25,15 +25,17 @@
             <li class="nav-item">
               <a class="nav-link" href="{{route('announcements_index')}}">Tutti gli annunci</a>
             </li>
-            <li class="nav-item">
-              <x-_locale lang="it"/>
-            </li>
-            <li class="nav-item">
-              <x-_locale lang="en"/>
-            </li>
-            <li class="nav-item">
-              <x-_locale lang="es"/>
-            </li>
+            
+            
+              <li class="nav-item position-absolute bottom-0 start-0">
+                <x-_locale lang="it"/>
+                <x-_locale lang="en"/>
+                <x-_locale lang="es"/>
+              </li>
+              
+              
+              
+            
             @guest
               <li>
                 <a class="d-inline nav-link" href="{{route('login')}}">Accedi / </a> 
@@ -58,7 +60,7 @@
           </ul>
         </div>
       </div>
-      <a class="navbar-brand mx-auto" href="{{route('home')}}"><img src="./public/storage/img/breeeze-logo.png" alt="">Breeeze</a>
-      <button class=""><i class="fa-solid fa-user"></i></button>
+      <a class="navbar-brand mx-auto sizelogo" href="{{route('home')}}"><img  src="" alt="">Breeeze</a>
+      <button class="border-0 btn bg-light fa-lg "><i class="fa-solid fa-user"></i></button>
     </div>
   </nav>

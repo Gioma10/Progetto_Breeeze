@@ -1,5 +1,5 @@
 <x-layout>
-<div class="container">
+<div class="container padding-header">
     <div class="row">
         <div class="col-12 col-md-8">
             <h1>{{$announcement_to_check ? 'Ecco l\'annuncio da revisionare' : 'Non ci sono annunci da revisionare'}}</h1>
