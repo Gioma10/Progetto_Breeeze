@@ -1,5 +1,6 @@
 <x-layout>
     @section('title', $titleView)
+
     {{-- header  --}}
     <header class="vh-100 text-center padding-header position-relative">
         <h1 class="my-color-blue">{{__('ui.welcomeTitle')}}</h1>
@@ -8,41 +9,44 @@
             <button class="my-btn mt-5"><a href="{{route('add-announcement')}}" class="a-none">Pubblica Annuncio</a></button>
         </div>
         <div class="position-absolute bottom-0 start-50 translate-middle">
-            <h3 class="my-color-blue m-0">Torva l'articolo che desideri</h3>
-            <i class="fa-solid fa-sort-down fs-2 my-color-blue"></i>
+            <h3 class="my-color-blue m-0">Trova l'articolo che desideri</h3>
+            <a href="#main"><i class="fa-solid fa-sort-down fs-2 my-color-blue" ></i></a>
         </div>
     </header>
+    
     {{-- welcome search  --}}
-    <section class="s1">
-        <section class=" welcome-search container-fluid bg-my-cyan">
-            <div class="row h-100 align-items-center justify-content-center">
-                <div class="col-12 d-flex justify-content-center">
-                    <form action="" class="d-flex w-75 myborder py-4 justify-content-center">
-                        <div class="me-5">
-                            <label for="category">Le nostre categorie</label>
-                            <select class="py-0 form-control" wire:model.defer="category" id="category">
+    <section class="s1" id="main">
+        {{-- form filtri  --}}
+        <section class="container vh20 px-5 py-3">
+            <div class="row h-100 align-items-center justify-content-center form-search">
+                {{-- div ricerca --}}
+                <div class="col-5 d-flex justify-content-center">
+                    <form action="{{route('announcements_index')}}" method="GET" class="d-flex flex-column w-100 justify-content-center">
+                        <label for="category">Filtra per categoria</label>
+                        <div class="mt-1 position-relative w-75">
+                            <select class="w-100 input-default" name='category_id' class="py-0 form-control" wire:model.defer="category" id="category">
                                 <option value="">Tutte le categorie</option>
                                 @foreach ($categories as $category)
-                                <option value="{{$category->id}}">
-                                    {{$category->name}}
-                                </option>
+                                    <option value="{{$category->id}}" {{(request('category_id') == $category->id) ? 'selected' : ''}}>
+                                        {{$category->name}}
+                                    </option>
                                 @endforeach
                             </select>
+                            <button type="submit" class="position-absolute end-0 h-100 btn-category"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </div>
-                        <div class="d-flex flex-column ms-5">
-                            <label for="search">Cosa cerchi?</label>
-                            <div class="d-flex">
-                                <input id="search" type="text">
-                                <button type="submit"><i class="fa fa-search"></i></button>
-                            </div>
-                        </div>
-                    </form>
+                    </form>        
                 </div>
+                <div class="col-5">
+                    <x-searchbar/>
+                </div>
+                {{-- fine div ricerca --}}
             </div>
         </section>
+       
+        
         {{-- carosello annunci infinito --}}
         <section class="container-fluid">
-            <div class="row justify-content-center myborder">
+            <div class="row justify-content-center myborder py-4">
                 <div class="infinite-carousel myborder w-100">
                     <div>
                         @foreach ($announcements as $announcement)
@@ -66,43 +70,65 @@
         </section>
     </section>
 
+    {{-- Sezione Breeze Master --}}
+    <section class="container-fluid vh-100 s2">
+        <div class="row h-100">
+            <div class="col-12 myborder">
+                <h3>Diventa un Breeze Master!</h3>
+            </div>
+
+            <div class="col-6 myborder">
+                  <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Parlaci di te</label>
+                    <input type="textarea" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Allega CV</label>
+                    <input type="file" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+                  </div>
+            </div>
+
+            <div class="col-6 myborder">
+
+            </div>
+        </div>
+
+    </section>
 
     {{-- card esempio per le misure e tutto il resto...  --}}
-    <section class="vh-100">
+    <section class="vh-20">
         <div class="row justify-content-center">
             <div class="col-3  myborder d-flex justify-content-center">
-                <div class="my-card ">
-                    <div class="p-4">
 
-                        <img src="https://picsum.photos/300/300" alt="" class=" object-fit-cover img-custom ">
-                    </div>
+                <div class="make-3D-space">
+                    <div class="product-card">
+                        <div class="product-front">
+                          <div class="shadow"></div>
+                            <img src="https://picsum.photos/200/300"  class="img-custom" alt=""/>
+                            <div class="image_overlay"></div>
+                            <div class="view_details">View Details</a></div>
+                            <div class="stats">
+                                <div class="stats-container">
+                                    <span class="product_price">$39</span>
+                                    <span class="product_name">Adidas Originals</span>
+                                    <p>Lorem ipsum dolor sit amet</p>
 
-                    <div class=" flex-column gab-3  px-4">
-                        <div class="d-flex align-items-center  justify-content-center">
-                            <span class="badge px-3 py-1 ">stock ready</span>
-                            
+                                    <div class="product-options">
+                                    <strong>Data pubblicazione: 14/04/2000</strong> 
+                                    <span></span>
+                                    <strong>Pubblicato da : Konrad Nowak</strong>
+
+                                </div>
+                                </div>
+                            </div>
                         </div>
-                         <h2 class="product-title my-2 ">Best Headphone </h2>
-                        <div class="">
-                            <span class="text-xl font-weight-bold ">
-                               $ 400
-                            </span>
-                           
 
-                        </div>
-                        <div>
-                            <p>Data:</p>
-                        </div>
-                        <div class=" gap-2 d-flex justify-content-around pb-2">
-                            <button class="button-primary px-5 py-2 rounded"> 
-                                Add to cart
-
-                            </button>
-                            <button class="rounded opacity-50 d-flex justify-content-center align-items-center px-3">
-                                <i class="fa-solid fa-eye"></i>
-                            </button>
-
-                        </div>
                     </div>
                 </div>
              
@@ -114,4 +140,7 @@
   
 
     
+
+
+
 </x-layout>
