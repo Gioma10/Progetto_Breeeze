@@ -28,8 +28,8 @@
             <div class="col-12 col-md-3 border-start">
                 <h5 class="tc-accent text-center mt-3">Tags</h5>
                 <div class="p-2">
-                    @if ($image->label)
-                        @foreach ($image->labels as $label)
+                    @if ($announcement_to_check->image->labels)
+                        @foreach ($announcement_to_check->image->labels as $label)
                             <p class="d-inline">{{$label}}</p>
                         @endforeach
                     @endif
