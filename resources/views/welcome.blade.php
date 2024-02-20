@@ -25,7 +25,7 @@
                         <label for="category">{{__('ui.categoryFilter')}}</label>
                         <div class="mt-1 position-relative w-75">
                             <select class="w-100 input-default" name='category_id' class="py-0 form-control" wire:model.defer="category" id="category">
-                                <option value="">{{__('allCategory')}}</option>
+                                <option value="">{{__('ui.allCategory')}}</option>
                                 @foreach ($categories as $category)
                                     <option value="{{$category->id}}" {{(request('category_id') == $category->id) ? 'selected' : ''}}>
                                         {{$category->name}}
@@ -46,8 +46,8 @@
         
         {{-- carosello annunci infinito --}}
         <section class="container-fluid vh80 mt-5">
-            <div class="row justify-content-center myborder py-4">
-                <div class="infinite-carousel myborder w-100">
+            <div class="row justify-content-center py-4">
+                <div class="infinite-carousel w-100">
                     <div>
                         @foreach ($announcements as $announcement)
                             <div class="col-md-1 d-flex justify-content-center">
@@ -65,9 +65,9 @@
                                                     <p>{{$announcement->category->name}}</p>
                 
                                                     <div class="product-options">
-                                                        <strong>{{__('publishedDate')}}{{$announcement->created_at->format('d/m/Y')}}</strong> 
+                                                        <strong>{{__('ui.publishedDate')}}: {{$announcement->created_at->format('d/m/Y')}}</strong> 
                                                         <span></span>
-                                                        <strong>{{__('publishFrom')}}{{$announcement->user->name}}</strong>
+                                                        <strong>{{__('ui.publishFrom')}}: {{$announcement->user->name}}</strong>
                                                     </div>
                                                 </div>
                                             </div>

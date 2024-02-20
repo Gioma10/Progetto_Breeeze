@@ -42,7 +42,7 @@
             @forelse ($announcements as $announcement)
                 <div class=" col-6 col-md-4 my-5 d-flex justify-content-center  ">
                     <div class="make-3D-space custom-shadow">
-                        <div class="product-card">
+                        <div class="product-card rounded">
                             <div class="product-front">
                               <div class="shadow"></div>
                                 <img src="{{!$announcement->images()->get()->isEmpty() ? $announcement->images()->first()->getUrl(400, 300):'https://picsum.photos/200'}}"  class="img-custom" alt=""/>

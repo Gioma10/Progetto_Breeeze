@@ -13,6 +13,8 @@ return [
 
     'allCategory' => 'Tutte le categorie',
 
+    'filterName'=>'Cerca per nome',
+
     'breezeMaster' => 'Diventa un Breeze Master!',
 
     'aboutYou' => 'Parlaci di te',
@@ -21,9 +23,9 @@ return [
 
     'viewDetails' => 'Visualizza Dettagli',
 
-    'publishedDate' => 'Data pubblicazione: 14/04/2000',
+    'publishedDate' => 'Data pubblicazione',
 
-    'publishFrom' => 'Pubblicato da : Konrad Nowak',
+    'publishFrom' => 'Pubblicato da',
 
 
 //  NAVBAR

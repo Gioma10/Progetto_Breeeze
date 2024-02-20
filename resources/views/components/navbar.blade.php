@@ -60,7 +60,7 @@
           </ul>
         </div>
       </div>
-      <a class="navbar-brand mx-auto sizelogo" href="{{route('home')}}"><img  src="" alt="">Breeeze</a>
+      <a class="navbar-brand mx-auto sizelogo" href="{{route('home')}}"><img class="" style="transform: scale(0.7)" src="./storage/img/logo-breeeze.png" alt=""></a>
       <button class="border-0 btn bg-light fa-lg "><i class="fa-solid fa-user"></i></button>
     </div>
   </nav>
