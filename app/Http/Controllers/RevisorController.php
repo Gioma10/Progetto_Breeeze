@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Artisan;
 
 class RevisorController extends Controller
 {
+
+    public function formRevisor() {
+        return view('revisor.became');
+    }
+
     public function index(){
 
         $announcement_to_check = Announcement::where('is_accepted', null)->first();
@@ -23,6 +28,7 @@ class RevisorController extends Controller
         $announcement->setAccepted(true);
         return redirect()->back()->with('message', 'Complimenti, hai accettato l\'annuncio');
     }
+
     public function rejectAnnouncement(Announcement $announcement) {
         
         $announcement->setAccepted(false);

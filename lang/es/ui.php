@@ -3,8 +3,6 @@
 return [
     'welcomeTitle' => 'encontrar tesoros, espacio libre',
 
-
-
     'welcomeSubtitle' => '¡Lo que buscabas para tus compras conscientes!',
 
     'welcomeButton' => 'Publicar anuncio',
@@ -18,6 +16,8 @@ return [
     'filterName'=>'Buscar por nombre',
 
     'breezeMaster' => '¡Conviértete en un maestro de la Breeze!',
+
+    'accedi' => 'Log In',
 
     'aboutYou' => 'Cuéntanos acerca de tí',
 

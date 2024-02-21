@@ -1,13 +1,6 @@
 <nav class="navbar fixed-top navbar-border bg-light">
     <div class="container-fluid">
-      {{-- <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button> --}}
-      
-      {{-- <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-        Link with href
-      </a> --}}
-      
+
       {{-- Off-canvas Menu --}}
       <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
         <i class="fa-solid fa-bars fa-lg"></i>
@@ -33,15 +26,11 @@
                 <x-_locale lang="es"/>
               </li>
               
-              
-              
-            
             @guest
               <li>
                 <a class="d-inline nav-link" href="{{route('login')}}">{{__('ui.navbarLogin')}}</a> 
                 <a class="nav-link d-inline" href="{{route('register')}}">{{__('ui.navbarRegister')}}</a>
               </li>   
-
             @endguest
             @auth
               @if (Auth::user()->is_revisor)
@@ -50,6 +39,10 @@
                     <span class="position-absolute counter-revisor badge rounded-pill bg-danger ">{{App\Models\announcement::toBeRevisionedCount()}}</span>
                     <span class="visually-hidden">{{__('ui.navbarUnread')}}</span>
                   </a>
+                </li>
+              @else
+                <li class="nav-item">
+                  <a class="nav-link" href="{{route('revisor_became')}}">diventa revisore</a>
                 </li>
               @endif
               <li>
@@ -60,7 +53,7 @@
           </ul>
         </div>
       </div>
-      <a class="navbar-brand mx-auto sizelogo" href="{{route('home')}}"><img class="" style="transform: scale(0.7)" src="./storage/img/logo-breeeze.png" alt=""></a>
+      <a class="navbar-brand mx-auto sizelogo" href="{{route('home')}}"><img class="" style="transform: scale(0.7)" src={{asset('storage/img/logo-breeeze.png')}} alt=""></a>
       <button class="border-0 btn bg-light fa-lg "><i class="fa-solid fa-user"></i></button>
     </div>
-  </nav>
+</nav>

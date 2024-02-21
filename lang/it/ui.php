@@ -15,7 +15,13 @@ return [
 
     'filterName'=>'Cerca per nome',
 
-    'breezeMaster' => 'Diventa un Breeze Master!',
+    'breeezeMaster' => 'Diventa un Breeeze Master!',
+
+    'talk' => 'Raccontaci di te ...',
+
+    'accedi' => 'Accedi',
+
+    'send-revisor' => 'Invia Richiesta',
 
     'aboutYou' => 'Parlaci di te',
 
