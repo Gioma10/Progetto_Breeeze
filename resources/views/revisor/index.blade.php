@@ -28,23 +28,31 @@
             <div class="col-12 col-md-3 border-start">
                 <h5 class="tc-accent text-center mt-3">Tags</h5>
                 <div class="p-2">
-                    @if ($announcement_to_check->image->labels)
-                        @foreach ($announcement_to_check->image->labels as $label)
+                    @foreach ($announcement_to_check->images as $image)
+                    @if($image->labels)
+                
+                        @foreach ($image->labels as $label)
                             <p class="d-inline">{{$label}}</p>
+                    
                         @endforeach
                     @endif
+                    @endforeach
                 </div>
             </div>
             <div class="col-12 col-md-3 border-start">
                 <div class="card-body">
                     <h5 class="tc-accent text-center mt-3">Revisione Immagini</h5>
+                    @foreach($announcement_to_check->images as $image)
                     <div class="mt-5">
+
+
                         <p>Adulti: <span class="{{$image->adult}}"></span></p>
                         <p>Satira: <span class="{{$image->spoof}}"></span></p>
                         <p>Medicina: <span class="{{$image->medical}}"></span></p>
                         <p>Violenza: <span class="{{$image->violence}}"></span></p>
                         <p>Contenuto Ammiccante: <span class="{{$image->racy}}"></span></p>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>
