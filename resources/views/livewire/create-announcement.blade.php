@@ -1,7 +1,15 @@
 <div>
-    <div class="container padding-header pb-5">
+    <div class="container mt100">
+        <div class="row justify-content-center pt-5">
+            <div class="col-12 ">
+                <h1 class="text-center">Pubblica il tuo annuncio</h1>
+            </div>
+            
+        </div>
+      </div>
+    <div class="container mt-4 pb-5">
         <div class="row  justify-content-center">
-            <div class="col-10">
+            <div class="col-5">
                 @if (session()->has('message'))
                     <div class="flex flex-row justify-center my-2 alert alert-success">
                         {{session('message')}}
@@ -16,7 +24,7 @@
 
                     <div class="mb-3">
                         <label for="InputDescription" class="form-label">Descrizione</label>
-                        <textarea  wire:model.lazy='description' id="InputDescription" cols="30" rows="10" class="@error('description') is-invalid @enderror form-control "></textarea>
+                        <textarea  wire:model.lazy='description' id="InputDescription" cols="30" rows="5" class="@error('description') is-invalid @enderror form-control "></textarea>
                     @error('description')
                         <div class="text-danger">
                             {{$message}}
@@ -32,7 +40,7 @@
                         </div>
                     @enderror
                     </div>
-                    <select class="form-control" wire:model.defer="category" id="category">
+                    <select class="form-control mb-2" wire:model.defer="category" id="category">
                         <option value="">Scegli la tua categoria</option>
                         @foreach ($categories as $category)
                             <option value="{{$category->id}}">
@@ -61,7 +69,7 @@
                                 <div class="row border border-4 border-info rounded py-4">
                                  @foreach ($images as $key => $image)
                                     <div class="col my-3">
-                                        <div class="preview mx-auto rounded" style="background-image: url({{$image->temporaryUrl()}});background-size: cover;"></div>
+                                        <div class="preview mx-auto rounded" style="background-image: url({{$image->temporaryUrl()}});background-size: cover;background-position: center;"></div>
                                         <button type="button" class="btn btn-danger d-block text-center mt-2 mx-auto" wire:click="removeImage({{$key}})">Cancella</button>
 
                                     </div>
